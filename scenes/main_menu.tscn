@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://brcnh0mv566de"]
+
+[ext_resource type="Texture2D" uid="uid://blkirvsj1bwya" path="res://images/bg.png" id="1_n2cxc"]
+[ext_resource type="FontFile" uid="uid://bk5j3fydo07eb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p82fr"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_y1w5q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adyeg"]
+texture = ExtResource("1_n2cxc")
+modulate_color = Color(0.466181, 0.466181, 0.466181, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xee6p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h46s"]
+bg_color = Color(0.724643, 0.724643, 0.724643, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8685g"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_75jsu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t3h8"]
+bg_color = Color(0.641934, 0.641934, 0.641934, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1w5q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adyeg")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -52.5
+offset_right = 221.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_fonts/font = ExtResource("1_p82fr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xee6p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6h46s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8685g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8685g")
+text = "Start Game	"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = 70.0
+offset_right = 221.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+theme_override_fonts/font = ExtResource("1_p82fr")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_75jsu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8t3h8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8685g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8685g")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 119.0
+offset_right = 1094.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("1_p82fr")
+theme_override_font_sizes/font_size = 64
+text = "KNIGHT ON A BREAK"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
